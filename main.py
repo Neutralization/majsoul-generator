@@ -2,7 +2,7 @@
 
 import re
 from tkinter import StringVar, Tk, ttk
-
+from functools import reduce
 from PIL import Image
 
 
@@ -10,17 +10,17 @@ def makeImage():
     test = textBox.get()
     image_list = []
     parts = test.split(' ')
-    for part in parts:
-        results = re.findall(r'(\d+[mpsz])', part)
+    for i in range(len(parts)):
+        part = parts[i]
+        results = re.findall(r'([0-9x]+[mpsz])', part)
+        if part == parts[0]:
+            results = list(
+                reduce(list.__add__,
+                       [['{}{}'.format(x, result[-1]) for x in result[:-1]]
+                        for result in results]))
+            results = sorted(sorted(results), key=lambda x: x[-1])
         for result in results:
-            if result[-1] == 'm':
-                image_list += ['./ui/{}m.png'.format(x) for x in result[:-1]]
-            elif result[-1] == 'p':
-                image_list += ['./ui/{}p.png'.format(x) for x in result[:-1]]
-            elif result[-1] == 's':
-                image_list += ['./ui/{}s.png'.format(x) for x in result[:-1]]
-            elif result[-1] == 'z':
-                image_list += ['./ui/{}z.png'.format(x) for x in result[:-1]]
+            image_list += ['./ui/{}{}.png'.format(x, result[-1]) for x in result[:-1]]
         image_list.append('./ui/0.png')
 
     print(image_list)
