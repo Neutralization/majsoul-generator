@@ -13,8 +13,8 @@ For Windows EXE
 
 ## Manual
 - 123456789m stands for 万/マン/Characters 🀇🀈🀉🀊🀋🀌🀍🀎🀏
-- 123456789p stands for 饼/ピン/Bamboos 🀙🀚🀛🀜🀝🀞🀟🀠🀡
-- 123456789s stands for 索/ソウ/Circles 🀐🀑🀒🀓🀔🀕🀖🀗🀘
+- 123456789p stands for 饼/ピン/Circles 🀙🀚🀛🀜🀝🀞🀟🀠🀡
+- 123456789s stands for 索/ソウ/Bamboos 🀐🀑🀒🀓🀔🀕🀖🀗🀘
 - 1234567z stands for 字·风/ジ/Wind·Dragon 🀀🀁🀂🀃🀆🀅🀄
 - 0m 0p 0s stands for 赤/Red Tile
 - 0z stands for Mahjong Tile Back 🀫
