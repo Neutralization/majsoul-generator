@@ -36,12 +36,12 @@ def countPoint(data):
             26, 26, 26, 26
         ]
         if int(yaku_id) // 100 == 1:
-            return "{}\t\t{}番\n".format("宝牌", int(yaku_id) % 100)
+            return "{}\t{}番\n".format("宝牌", int(yaku_id) % 100)
         elif int(yaku_id) // 100 == 2:
-            return "{}\t\t{}番\n".format("赤宝牌", int(yaku_id) % 100)
+            return "{}\t{}番\n".format("赤宝牌", int(yaku_id) % 100)
         elif int(yaku_id) // 100 == 3:
-            return "{}\t\t{}番\n".format("里宝牌", int(yaku_id) % 100)
-        return "{}\t\t{}番\n".format(
+            return "{}\t{}番\n".format("里宝牌", int(yaku_id) % 100)
+        return "{}\t{}番\n".format(
             names[ids.index(yaku_id)], fan_richi[ids.index(yaku_id)]
             if ura else fan_fuuro[ids.index(yaku_id)])
 
@@ -67,17 +67,17 @@ def countPoint(data):
     for x in result['data']['yakus']:
         resultBox.insert(INSERT, getYakuInfo(x, result['data']['inner']))
     resultBox.insert(
-        INSERT, '总计\t\t{}符{}番\n'.format(result['data']['fu'],
-                                        result['data']['fan']))
+        INSERT, '总计\t{}符{}番\n'.format(result['data']['fu'],
+                                      result['data']['fan']))
     resultBox.insert(
-        INSERT, '得点\t\t{}\n'.format((
+        INSERT, '得点\t{}\n'.format((
             "{} ALL".format(result['data']['perPoint'] * 2 // 100 *
-                            100) if result['data']['tsumo'] else
-            (result['data']['perPoint'] * 6 // 100 *
-             100)) if result['data']['isQin'] else ("{} - {}".format(
-                 result['data']['perPoint'], result['data']['perPoint'] *
-                 2) if result['data']['tsumo'] else (
-                     result['data']['perPoint'] * 4 // 100 * 100))))
+                            100) if result['data']['tsumo'] else (
+                                result['data']['perPoint'] * 6 // 100 * 100)
+        ) if result['data']['isQin'] else ("{} - {}".format(
+            result['data']['perPoint'], result['data']['perPoint'] *
+            2) if result['data']['tsumo'] else (result['data']['perPoint'] *
+                                                4 // 100 * 100))))
 
 
 def makeImage(text):
@@ -190,7 +190,6 @@ ttk.Label(window, text='里宝指示牌').grid(column=3, row=2, sticky=W, padx=5
 ura = StringVar()
 ura_entered = ttk.Entry(window, width=14, textvariable=ura)
 ura_entered.grid(column=4, row=2, columnspan=2, sticky=W)
-
 
 ttk.Label(window, text='场风').grid(column=0, row=3, sticky=W, padx=5, pady=5)
 placewind = StringVar()
