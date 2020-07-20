@@ -36,6 +36,6 @@ For Windows EXE
 ![](img/1m_123m123p123s111z_1m.png)
 
 ## Todo
-- [ ] Point counting.
+- [x] Point counting.
 - [x] Image generate.
 - [x] Mahjong Tiles Sorting.
